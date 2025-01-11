@@ -10,6 +10,11 @@ const Hero = () => {
     worksSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    contactSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const letterAnimation = {
     initial: { y: 100, opacity: 0 },
     animate: (i) => ({
@@ -101,7 +106,7 @@ const Hero = () => {
             </span>
           </motion.button>
           <motion.button
-            onClick={() => navigate('/contact')}
+            onClick={scrollToContact}
             whileHover={{ scale: 1.05 }}
             className="px-8 py-3 text-gray-400 hover:text-white transition-all"
           >

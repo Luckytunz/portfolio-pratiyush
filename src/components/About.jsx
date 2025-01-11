@@ -11,7 +11,7 @@ const About = () => {
     },
     {
       title: "Expertise",
-      skills: ["Character Design", "Environment Art", "Animation", "Texturing"],
+      skills: ["Character Design", "Environment Art", "Product Design", "Sculpting"],
       gradient: "from-purple-400 to-pink-400",
       delay: 0.3
     },

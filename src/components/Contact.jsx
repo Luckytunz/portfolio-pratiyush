@@ -7,13 +7,13 @@ const Contact = () => {
   const socialLinks = [
     {
       name: "Upwork",
-      url: "#",
+      url: "https://www.upwork.com/freelancers/~01f489b463c53082c9?mp_source=share",
       color: "from-green-400 to-teal-400",
       icon: <SiUpwork size={24} />
     },
     {
       name: "Instagram",
-      url: "#",
+      url: "https://www.instagram.com/lucky_tunez/",
       color: "from-pink-500 via-purple-500 to-orange-500",
       icon: <FaInstagram size={24} />
     }
