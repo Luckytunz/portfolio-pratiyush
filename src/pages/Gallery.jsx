@@ -7,16 +7,19 @@ const Gallery = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   
   // Update the image generation to handle different extensions
-  const items = Array.from({ length: 37 }, (_, i) => {
+  const items = Array.from({ length: 46 }, (_, i) => {
     const id = i + 1;
-    // Use .jpg extension for images 6, 7, and 8, .png for others, and .mkv for specific files
+    // Use .jpg extension for images 6, 7, and 8, .png for others, and video files for specific IDs
     let extension;
     let type;
     if ([6, 7, 8].includes(id)) {
       extension = 'jpg';
       type = 'image';
-    } else if ([25, 31, 32, 34, 35].includes(id)) {
+    } else if ([25, 31, 32, 34, 35, 41, 42].includes(id)) {
       extension = 'mkv';
+      type = 'video';
+    } else if (id === 38) {
+      extension = 'mp4';
       type = 'video';
     } else {
       extension = 'png';
