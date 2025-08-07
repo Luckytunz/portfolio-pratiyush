@@ -56,10 +56,10 @@ const Hero = () => {
             animate={{ opacity: 1 }}
           >
             <span className="absolute -top-1 left-0 right-0 blur-2xl opacity-50 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
-              LUCKY
+              Pratiyush 
             </span>
             <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-white">
-              LUCKY
+             Pratiyush 
             </span>
           </motion.h1>
         </div>

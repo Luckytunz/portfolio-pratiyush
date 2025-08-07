@@ -13,7 +13,7 @@ const Contact = () => {
     },
     {
       name: "Instagram",
-      url: "https://www.instagram.com/lucky_tunez/",
+      url: "https://www.instagram.com/pratiyush._gautam/",
       color: "from-pink-500 via-purple-500 to-orange-500",
       icon: <FaInstagram size={24} />
     }
@@ -41,7 +41,7 @@ const Contact = () => {
             <div className="flex justify-between items-start">
               <div>
                 <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
-                  Lucky
+                  Pratiyush Gautam
                 </h3>
                 <p className="text-gray-400 mt-1">3D Artist & Visual Designer</p>
               </div>
@@ -58,7 +58,7 @@ const Contact = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <p className="text-gray-300">shinobiwolf709@gmail.com</p>
+                <p className="text-gray-300">gautamyush7@gmail.com</p>
               </div>
               <div className="flex items-center gap-4">
                 <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">

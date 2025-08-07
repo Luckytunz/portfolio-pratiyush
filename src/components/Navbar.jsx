@@ -45,7 +45,7 @@ const Navbar = () => {
                 className="text-2xl font-bold"
               >
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300">
-                  Lucky
+                  Pratiyush 
                 </span>
                 <span className="text-purple-400">.</span>
               </motion.div>
