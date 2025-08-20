@@ -18,10 +18,7 @@ const Gallery = () => {
     } else if ([25, 31, 32, 34, 35, 41, 42].includes(id)) {
       extension = 'mkv';
       type = 'video';
-    } else if (id === 38) {
-      extension = 'mp4';
-      type = 'video';
-    } else {
+    }  else {
       extension = 'png';
       type = 'image';
     }
