@@ -4,6 +4,7 @@ import Hero from '../components/Hero'
 import Navbar from '../components/Navbar'
 import About from '../components/About'
 import FeaturedWorks from '../components/FeaturedWorks'
+import DemoReel from '../components/DemoReel'
 import Contact from '../components/Contact'
 import ParticleField from '../components/ParticleField'
 
@@ -25,7 +26,8 @@ const Homepage = () => {
       <div className="fixed inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-transparent via-black/50 to-black pointer-events-none" />
       <div className="relative z-10">
         <Navbar />
-        <Hero />
+  <Hero />
+  <DemoReel />
         <About />
         <FeaturedWorks />
         <Contact />

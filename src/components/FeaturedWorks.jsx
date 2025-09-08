@@ -41,7 +41,7 @@ const FeaturedWorks = () => {
         >
           <span className="absolute -inset-x-40 inset-y-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 blur-xl" />
           <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-200 to-white">
-            Recent Creations
+            Creative Explorations
           </span>
         </motion.h2>
 
@@ -50,62 +50,67 @@ const FeaturedWorks = () => {
         <div className="absolute left-1/2 -translate-x-1/2 w-[100px] h-[1px] bottom-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent opacity-50" />
       </div>
 
-      {/* Videos Grid */}
+      {/* Videos Layout: 1 tall primary + 2 stacked side videos */}
       <div className="max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-12 gap-4 md:gap-6 relative">
-          {/* First Video - Larger */}
+        <div className="flex flex-col md:flex-row gap-6 relative">
+          {/* Primary Tall Video */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="col-span-12 md:col-span-8 relative group"
+            transition={{ duration: 0.7 }}
+            className="relative group md:w-2/3"
           >
-            <div className={`absolute inset-0 bg-gradient-to-r ${videos[0].gradient} blur-[50px] opacity-30 group-hover:opacity-50 transition-opacity`} />
+            <div className={`absolute inset-0 bg-gradient-to-r ${videos[0].gradient} blur-[70px] opacity-30 group-hover:opacity-60 transition-opacity`} />
             <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="relative aspect-video rounded-xl overflow-hidden"
+              whileHover={{ scale: 1.015 }}
+              className="relative h-[260px] sm:h-[360px] md:h-[640px] rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.06)]"
             >
               <video
                 src={videos[0].url}
-                className="w-full h-full object-cover transform transition-transform duration-700"
+                className="w-full h-full object-cover object-center transition-transform duration-700"
                 loop
                 muted
                 playsInline
                 onMouseEnter={(e) => e.target.play()}
                 onMouseLeave={(e) => e.target.pause()}
+                preload="metadata"
               />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </motion.div>
           </motion.div>
 
-          {/* Second and Third Videos - Smaller and Stacked */}
-          <div className="col-span-12 md:col-span-4 space-y-4 md:space-y-6">
-            {videos.slice(1).map((video, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className="relative group"
-              >
-                <div className={`absolute inset-0 bg-gradient-to-r ${video.gradient} blur-[30px] opacity-30 group-hover:opacity-50 transition-opacity`} />
+          {/* Side Stacked Videos */}
+            <div className="flex flex-col gap-6 md:w-1/3">
+              {videos.slice(1).map((video, index) => (
                 <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  className="relative aspect-[4/3] rounded-xl overflow-hidden"
+                  key={index}
+                  initial={{ opacity: 0, x: 60 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.15, duration: 0.6 }}
+                  className="relative group flex-1"
                 >
-                  <video
-                    src={video.url}
-                    className="w-full h-full object-cover transform transition-transform duration-700"
-                    loop
-                    muted
-                    playsInline
-                    onMouseEnter={(e) => e.target.play()}
-                    onMouseLeave={(e) => e.target.pause()}
-                  />
+                  <div className={`absolute inset-0 bg-gradient-to-r ${video.gradient} blur-[50px] opacity-30 group-hover:opacity-55 transition-opacity`} />
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    className="relative h-[200px] sm:h-[260px] md:h-[calc((640px-1.5rem)/2)] rounded-xl overflow-hidden ring-1 ring-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.05)]"
+                  >
+                    <video
+                      src={video.url}
+                      className="w-full h-full object-cover transition-transform duration-700"
+                      loop
+                      muted
+                      playsInline
+                      onMouseEnter={(e) => e.target.play()}
+                      onMouseLeave={(e) => e.target.pause()}
+                      preload="metadata"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </motion.div>
                 </motion.div>
-              </motion.div>
-            ))}
-          </div>
+              ))}
+            </div>
         </div>
 
         {/* Gallery Button */}

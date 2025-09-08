@@ -27,10 +27,9 @@ const ParticleField = () => {
           x: Math.random() * width,
           y: Math.random() * height,
           size: Math.random() * 2 + 1,
-          speedX: Math.random() * 2 - 1,
-          speedY: Math.random() * 2 - 1,
-          originalX: Math.random() * width,
-          originalY: Math.random() * height,
+          // Gentle drifting speeds for a subtle snowfall effect
+          speedX: (Math.random() - 0.5) * 0.3, // slight horizontal sway
+          speedY: Math.random() * 0.4 + 0.1,   // slow downward drift
         })
       }
     }
@@ -41,15 +40,25 @@ const ParticleField = () => {
         const dx = mousePosition.current.x - particle.x
         const dy = mousePosition.current.y - particle.y
         const distance = Math.sqrt(dx * dx + dy * dy)
-        const force = (100 - Math.min(distance, 100)) / 100
+        const force = (100 - Math.min(distance, 100)) / 100 // 0..1 when within 100px
 
-        if (distance < 100) {
-          particle.x += (dx / distance) * force * -1
-          particle.y += (dy / distance) * force * -1
+        if (distance < 100 && distance > 0) {
+          // Repel from mouse (same behavior as before)
+            particle.x += (dx / distance) * force * -2 // slightly stronger so drift doesn't overpower
+            particle.y += (dy / distance) * force * -2
         } else {
-          particle.x += (particle.originalX - particle.x) * 0.05
-          particle.y += (particle.originalY - particle.y) * 0.05
+          // Gentle autonomous drift (snowfall effect)
+          particle.x += particle.speedX
+          particle.y += particle.speedY
         }
+
+        // Wrap / recycle when going out of bounds for continuous flow
+        if (particle.y > height + 10) {
+          particle.y = -10
+          particle.x = Math.random() * width
+        }
+        if (particle.x > width + 10) particle.x = -10
+        else if (particle.x < -10) particle.x = width + 10
 
         ctx.beginPath()
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2)
