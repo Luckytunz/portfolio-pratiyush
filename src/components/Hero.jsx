@@ -43,7 +43,7 @@ const Hero = () => {
             transition={{ delay: 0.5 }}
             className="text-sm md:text-base font-mono tracking-[0.3em] text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300"
           >
-            3D ARTIST & VISUAL DESIGNER Game developer
+            3D ARTIST & VISUAL DESIGNER
           </motion.span>
           <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500 to-transparent" />
         </motion.div>
